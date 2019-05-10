@@ -31,13 +31,13 @@ def get_m_h5_tk():
 
 # 获取秘钥
 def get_sign(data):
-    t = str(int(time.time() * 1000))
-    #t = "1557496164805"
+    #t = str(int(time.time() * 1000))
+    t = "1557496164805"
     appkey = "12574478"
     set_cookie = get_m_h5_tk()
-    token = set_cookie["_m_h5_tk"].split("_")[0]
-    print(token)
-    #token = "4d14c10a29d9f4b8e45367aa9dbbf618"
+    #token = set_cookie["_m_h5_tk"].split("_")[0]
+    #print(token)
+    token = "4d14c10a29d9f4b8e45367aa9dbbf618"
     sign = hashlib.md5()
     datas = token + '&' + t + '&' + appkey + '&' + data
     sign.update(datas.encode())
